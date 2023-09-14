@@ -1,9 +1,9 @@
 const fs = require("fs");
 const path = require("path");
 const { v4: uuidv4 } = require("uuid");
-const COURSES_DIR = path.join(__dirname, "../pages/courses");
+const COURSES_DIR = path.join(__dirname, "../../pages/courses");
 
-createNewCourse("curso de ventas edx");
+createNewCourse("Test Course");
 
 function generateUniqueId() {
   return uuidv4();

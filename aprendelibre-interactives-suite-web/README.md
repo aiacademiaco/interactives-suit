@@ -1,5 +1,24 @@
 # aprendelibre-interactives-suite-web
 
+## Arquitecture
+
+```bash
+aprendelibre-interactives-suite-web/
+├── assets/        # Global resources such as images and styles.
+├── components/    # Reusable components.
+├── layouts/       # Application layouts.
+├── middleware/    # Nuxt.js middleware.
+├── pages/         # Routes and views of the application.
+│   ├── courses/
+│   │   ├── _courseId/
+│   │   │   ├── _interactiveId.vue    # Specific interactive page within a course.
+│   │   │   ├── index.vue             # List of interactives for a course.
+│   │   ├── index.vue                 # List of courses.
+├── plugins/       # Nuxt.js plugins.
+├── static/        # Static files.
+└── store/         # Vuex store if used.
+```
+
 ## Build Setup
 
 ```bash
@@ -40,7 +59,6 @@ More information about the usage of this directory in [the documentation](https:
 Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
-
 
 ### `pages`
 

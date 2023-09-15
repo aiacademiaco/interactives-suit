@@ -1,1 +1,6 @@
-<!-- Content for interactive-01.vue -->
+<template>
+  <div>
+    <h1>hola mundo</h1>
+  </div>
+</template>
+<script></script>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>hola mundo</h1>
+    <h1>soy el app.vue</h1>
   </div>
 </template>
 <script></script>

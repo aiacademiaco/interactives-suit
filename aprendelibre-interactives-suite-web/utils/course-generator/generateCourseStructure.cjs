@@ -1,9 +1,19 @@
 const fs = require("fs");
 const path = require("path");
 const { v4: uuidv4 } = require("uuid");
+const readline = require("readline"); // 1. Importar readline
+
 const COURSES_DIR = path.join(__dirname, "../../pages/courses");
 
-createNewCourse("Test Course");
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+rl.question("Please enter the course name: ", (courseName) => {
+  createNewCourse(courseName);
+  rl.close();
+});
 
 function generateUniqueId() {
   return uuidv4();
@@ -31,20 +41,20 @@ function createCourseDirectory(courseId, courseName) {
     fs.mkdirSync(coursePath, { recursive: true });
   }
 
-  // Crear carpeta section-01
+  // Create section-01 folder
   const sectionPath = path.join(coursePath, "section-01");
   fs.mkdirSync(sectionPath, { recursive: true });
 
-  // Crear archivo index.html en section-01
-  fs.writeFileSync(
-    path.join(sectionPath, "index.html"),
-    "<!-- Content for index.html -->"
-  );
-
-  // Crear archivo interactive-01.vue en section-01
+  // Create interactive-01.vue file in section-01
   fs.writeFileSync(
     path.join(sectionPath, "interactive-01.vue"),
-    "<!-- Content for interactive-01.vue -->"
+    `
+    <template>
+        <div>
+            <!-- your code -->
+        </div>
+    </template>
+    `
   );
 
   return coursePath;

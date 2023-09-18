@@ -1,1 +1,0 @@
-# Course curso de ventas edx (ID: 7353d345-08fb-414f-b895-9eb6f9db4077)

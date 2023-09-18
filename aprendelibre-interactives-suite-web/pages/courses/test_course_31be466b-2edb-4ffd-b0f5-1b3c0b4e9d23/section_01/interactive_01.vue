@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h1>index</h1>
+    <!-- your code -->
+    <h1>hola mundo</h1>
   </div>
 </template>
+
 <script></script>

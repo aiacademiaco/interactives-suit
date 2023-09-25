@@ -59,6 +59,7 @@ export default {
   methods: {
     onDragStart(item, index) {
       this.renderFeedback = false;
+      this.feedback.text = "¡Inténtalo de nuevo!";
 
       this.dragItem = { item, index };
     },
@@ -89,9 +90,11 @@ export default {
     },
     handleFeedback(isCorrect, selectedOption) {
       if (isCorrect) {
-        this.fireConfetti()
         this.setCorrectFeedback(selectedOption);
+
+        this.fireConfetti();
       }
+
       this.renderFeedback = true;
     },
     resetDragItem() {

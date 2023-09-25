@@ -24,6 +24,8 @@
 </template>
 
 <script>
+import confetti from "canvas-confetti";
+
 export default {
   data() {
     return {
@@ -78,8 +80,16 @@ export default {
     setCorrectFeedback(selectedOption) {
       this.feedback.text = this.feedback.correct[selectedOption];
     },
+    fireConfetti() {
+      confetti({
+        zIndex: 999,
+        particleCount: 100,
+        spread: 100,
+      })
+    },
     handleFeedback(isCorrect, selectedOption) {
       if (isCorrect) {
+        this.fireConfetti()
         this.setCorrectFeedback(selectedOption);
       }
       this.renderFeedback = true;
@@ -97,7 +107,7 @@ export default {
       this.handleFeedback(isCorrect, selectedOption);
       this.resetDragItem();
     }
-  },
+  }
 };
 </script>
 
@@ -121,12 +131,29 @@ export default {
 }
 
 .draggable__option {
-  border: 3px solid #3F51B5;
+  box-sizing: border-box;
   padding: 1rem 1.5rem;
+  background: rgba(217, 217, 217, 0.58);
+  border: 1px solid white;
+  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  cursor: grab;
+  transition: all 0.5s;
+  user-select: none;
   font-size: 1.125rem;
   font-weight: 600;
-  border-radius: 12px;
-  cursor: grab;
+  color: black;
+}
+
+.draggable__option:hover {
+  border: 1px solid #000;
+  transform: scale(1.05);
+}
+
+.draggable__option:active {
+  cursor: grabbing;
+  transform: scale(0.95) rotateZ(1.7deg);
 }
 
 .match-option {
@@ -135,7 +162,7 @@ export default {
 
 .match-option__text {
   font-size: 18px;
-  border: 3px solid #3F51B5;
+  border: 2px solid #3F51B5;
   border-radius: 12px;
   padding: 1rem;
 }

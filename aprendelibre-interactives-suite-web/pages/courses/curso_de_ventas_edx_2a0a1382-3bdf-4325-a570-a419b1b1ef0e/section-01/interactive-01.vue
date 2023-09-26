@@ -157,7 +157,7 @@ export default {
 }
 
 .app {
-  background: #fff;
+  background: #27476e;
   width: 90%;
   max-width: 600px;
   margin: 100px auto 0;
@@ -169,9 +169,9 @@ export default {
 
 .app h1 {
   font-size: 25px;
-  color: #001e4d;
+  color: #fff;
   font-weight: 600;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #EAE0B7;
   padding-bottom: 30px;
 }
 
@@ -181,7 +181,7 @@ export default {
 
 .quiz h2 {
   font-size: 18px;
-  color: #001e4d;
+  color: #fafafa;
   font-weight: 600;
   margin-bottom: 10px;
 }
@@ -194,7 +194,7 @@ export default {
 
 .btn {
   background: #fff;
-  color: #222;
+  color: #000;
   font-weight: 500;
   width: 100%;
   border: 1px solid #222;
@@ -207,13 +207,13 @@ export default {
 }
 
 .btn:hover {
-  background: #3ca5a2;
-  color: #fff;
+  background: #EAE0B7;
+  /* color: #fff; */
 }
 
 #reset-btn {
-  background: #001e4d;
-  color: #fff;
+  background: #EAE0B7;
+  color: #000;
   font-weight: 500;
   width: 150px;
   border: 0;

@@ -14,7 +14,7 @@ RUN cp -R api/node_modules api/dist/node_modules
 # final stage- combine front and back
 FROM node:18
 WORKDIR /usr/src/app/
-RUN ls -R /usr/src/app/web/
+RUN ls -R /usr/src/app
 COPY --from=web /usr/src/app/web/dist ./web
 COPY --from=backend /usr/src/app/api/dist ./
 RUN ls

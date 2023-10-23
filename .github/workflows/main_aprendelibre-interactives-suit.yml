@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://ghcr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_e5b284ca51f5409ebff8a05ae9a67a75 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_77427fba024a4fce93fd374402d00762 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_26eea3b948784245a29465878e3a4a9c }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_b3d8f992c3cb4cc3b08d8f8c89d3d269 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: ghcr.io/${{ secrets.AzureAppService_ContainerUsername_e5b284ca51f5409ebff8a05ae9a67a75 }}/gcfglobal-repos/gcf-global/interactive-suit:${{ github.sha }}
+        tags: ghcr.io/${{ secrets.AzureAppService_ContainerUsername_26eea3b948784245a29465878e3a4a9c }}/gcfglobal-repos/gcf-global/interactive-suit:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'aprendelibre-interactives-suit'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_3e8625e80b754a9ab5b6e838918cc074 }}
-        images: 'ghcr.io/${{ secrets.AzureAppService_ContainerUsername_e5b284ca51f5409ebff8a05ae9a67a75 }}/gcfglobal-repos/gcf-global/interactive-suit:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_75feaff35a6c4d04a8a2714a8205d510 }}
+        images: 'ghcr.io/${{ secrets.AzureAppService_ContainerUsername_26eea3b948784245a29465878e3a4a9c }}/gcfglobal-repos/gcf-global/interactive-suit:${{ github.sha }}'

@@ -38,7 +38,7 @@ app.use(function (req, res, next) {
 });
 
 app.use(cors());
-
+debugger;
 app.use("/api", routes);
 
 const port = process.env.port || 8080;

@@ -19,4 +19,4 @@ COPY --from=backend /usr/src/app/api/dist ./
 RUN ls
 
 EXPOSE 8080
-CMD [ "node", "web/.output/server/index.mjs" ]
+CMD [ "node", "web/index.mjs" ]

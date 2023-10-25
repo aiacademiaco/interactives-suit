@@ -1,8 +1,8 @@
 import { Router, Request, Response, NextFunction } from "express";
 
-const couresRouter = Router();
+const coursesRouter = Router();
 
-couresRouter.get("/", async (request: Request, response: Response) => {
+coursesRouter.get("/", async (request: Request, response: Response) => {
   try {
     response.status(200).send({ courses: true });
   } catch (error) {
@@ -14,4 +14,4 @@ couresRouter.get("/", async (request: Request, response: Response) => {
   }
 });
 
-export default couresRouter;
+export default coursesRouter;

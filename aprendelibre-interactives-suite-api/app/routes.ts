@@ -3,6 +3,6 @@ import coursesRouter from "./courses/courses.controller";
 
 const routes = Router();
 
-routes.use("/courses", coursesRouter);
+routes.use("/coursesTest", coursesRouter);
 
 export default routes;

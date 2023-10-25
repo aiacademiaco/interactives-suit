@@ -14,9 +14,9 @@ RUN cp -R api/node_modules api/dist/node_modules
 # final stage- combine front and back
 FROM node:18
 WORKDIR /usr/src/app/
-COPY --from=web /usr/src/app/web/.output/server/ ./web
-COPY --from=backend /usr/src/app/api/dist ./
+COPY --from=web /usr/src/app/web/.output ./web
+COPY --from=backend /usr/src/app/api/dist ./api
 RUN ls
 
 EXPOSE 8080
-CMD [ "node", "web/index.mjs" ]
+CMD [ "node", "web/server/index.mjs" ]

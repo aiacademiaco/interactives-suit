@@ -1,5 +1,5 @@
 <template>
-  <div class="activity-wrapper">
+  <div class="decisions-tree-wrapper">
     <div class="card">
 
       <div class="onboarding" v-if="onBoarding.show">
@@ -209,72 +209,3 @@ function selectOption(option) {
   }
 }
 </script>
-
-<style scoped>
-.activity-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.card {
-  max-width: 350px;
-  padding: 1.875rem;
-  border-radius: 0.75rem;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  background-color: #fff;
-}
-
-.content {
-  text-align: center;
-}
-
-.title {
-  color: #000000;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 1.5rem;
-}
-
-.message {
-  margin-top: 1rem;
-  color: #595b5f;
-  font-size: 1rem;
-  line-height: 1.25rem;
-  font-weight: 600;
-}
-
-.actions {
-  margin: 1rem;
-}
-
-.actions__button {
-  padding: 0.5rem 1rem;
-  background-color: #1aa06d;
-  color: #ffffff;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  width: 100%;
-  border-radius: 0.375rem;
-  border: none;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  margin-bottom: 0.75rem;
-  cursor: pointer;
-}
-
-@keyframes animate {
-  from {
-    transform: scale(1);
-  }
-
-  to {
-    transform: scale(1.09);
-  }
-}
-</style>

@@ -1,0 +1,78 @@
+.app {
+    background: #27476e;
+    width: 90%;
+    max-width: 600px;
+    margin: 100px auto 0;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 2px 20px #d1e1e9;
+    border-radius: 12px;
+}
+
+.app h1 {
+    font-size: 25px;
+    color: #fff;
+    font-weight: 600;
+    border-bottom: 1px solid #EAE0B7;
+    padding-bottom: 30px;
+}
+
+.quiz {
+    padding: 20px 0;
+}
+
+.quiz h2 {
+    font-size: 18px;
+    color: #fafafa;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.quiz #seller-description {
+    font-size: 18px;
+    color: #ffffff;
+    margin: 2rem 0;
+    line-height: 1.2;
+}
+
+.quiz .try-again-text {
+    font-size: 18px;
+    color: #ffffff;
+    line-height: 1.2;
+}
+
+.btn {
+    background: #fff;
+    color: #000;
+    font-weight: 500;
+    width: 100%;
+    border: 1px solid #222;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: left;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background: #EAE0B7;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 38px;
+}
+
+#reset-btn {
+    background: #EAE0B7;
+    color: #000;
+    font-weight: 500;
+    width: 150px;
+    border: 0;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}

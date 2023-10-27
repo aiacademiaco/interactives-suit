@@ -1,7 +1,6 @@
 <template>
   <h1 class="activity__title">Drag and Drop Matching Activity</h1>
-
-  <div class="activity-wrapper">
+  <div class="drag-and-drop-wrapper">
     <div class="draggable-options-container">
       <p class="draggable__option" v-for="(item, index) in items" :key="index" :draggable="true"
         @dragstart="onDragStart(item, index)">
@@ -152,84 +151,3 @@ export default {
 }
 
 </script>
-
-<style scoped>
-.activity__title {
-  text-align: center;
-  color: #fff;
-  font-size: 28px;
-}
-
-.activity-wrapper {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  margin: 6rem auto;
-  gap: 16rem;
-  justify-content: center;
-}
-
-.draggable-options-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.draggable__option {
-  box-sizing: border-box;
-  padding: 1rem 1.5rem;
-  background: #eae0b7;
-  border: 1px solid white;
-  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
-  border-radius: 12px;
-  backdrop-filter: blur(6px);
-  cursor: grab;
-  transition: all 0.5s;
-  user-select: none;
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: black;
-}
-
-.draggable__option:hover {
-  border: 1px solid #000;
-  transform: scale(1.05);
-}
-
-.draggable__option:active {
-  cursor: grabbing;
-  transform: scale(0.95) rotateZ(1.7deg);
-}
-
-.match-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.match-option {
-  max-width: 400px;
-  border-radius: 12px;
-  border: 2px solid #D38D02;
-  padding: 1rem;
-}
-
-.match-option__text {
-  font-size: 18px;
-  color: #FFF;
-  margin: 0;
-}
-
-.feedback-container {
-  width: 40%;
-  margin: 0 auto;
-}
-
-.feedback-container__text {
-  text-align: center;
-  font-size: 20px;
-  line-height: 1.3;
-  color: #fff;
-  margin: 0;
-}
-</style>

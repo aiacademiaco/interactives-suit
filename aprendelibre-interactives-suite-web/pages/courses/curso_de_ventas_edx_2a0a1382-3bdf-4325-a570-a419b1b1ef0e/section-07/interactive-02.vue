@@ -1,6 +1,6 @@
 <template>
   <div class="decisions-tree-wrapper">
-    <div class="card">
+    <div class="card-container">
 
       <div class="onboarding" v-if="onBoarding.show">
         <div class="content">

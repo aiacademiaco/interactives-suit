@@ -80,6 +80,47 @@
         }
     }
 
+    .memory-activity-actions {
+        margin: 2rem 0;
+
+        &__btn {
+            padding: 0.1em 0.25em;
+            width: 13em;
+            height: 4.2em;
+            background-color: #0f0f0f;
+            border: 0.08em solid #fff;
+            border-radius: 0.3em;
+            font-size: 11px;
+            cursor: pointer;
+
+            span {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                bottom: 0.4em;
+                width: 8.25em;
+                height: 2.5em;
+                background-color: #f8f8f8;
+                border-radius: 0.2em;
+                font-size: 1.5em;
+                color: #161617;
+                border: 0.08em solid #757272;
+                box-shadow: 0 0.4em 0.1em 0.019em #fff;
+
+                &:hover {
+                    transition: all 0.5s;
+                    transform: translate(0, 0.4em);
+                    box-shadow: 0 0 0 0 #fff;
+                }
+
+                &:not(hover) {
+                    transition: all 1s;
+                }
+            }
+        }
+    }
+
     .feedback {
         margin: 1rem 0;
 

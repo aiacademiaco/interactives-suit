@@ -12,6 +12,9 @@
             </li>
         </ul>
     </div>
+    <div class="memory-activity-actions" v-if="renderResetBtn">
+        <button class="memory-activity-actions__btn" @click="resetGame"><span>Reiniciar</span></button>
+    </div>
     <div class="feedback" v-show="showFeedBack">
         <p class="feedback__text">{{ feedBackText }}</p>
     </div>
@@ -29,6 +32,7 @@ useHead({
 })
 
 const showFeedBack = ref(false);
+const renderResetBtn = ref(false);
 const feedBackText = '¡Qué gran memoria!';
 const cards = ref([]);
 
@@ -83,8 +87,8 @@ function shuffleCard() {
     sortBackImagesCards()
 }
 
-onMounted(async () => {
-    cards.value = document.querySelectorAll('.card');
+function resetGame() {
+    renderResetBtn.value = false;
 
     shuffleCard();
 
@@ -95,6 +99,12 @@ onMounted(async () => {
     setTimeout(() => {
         unFlipCards();
     }, 3000);
+}
+
+onMounted(async () => {
+    cards.value = document.querySelectorAll('.card');
+
+    resetGame();
 })
 
 function showValidFeedBack() {
@@ -111,9 +121,7 @@ function matchCards(img1, img2) {
         matched++;
 
         if (matched === 10) {
-            setTimeout(() => {
-                return shuffleCard();
-            }, 1000)
+            renderResetBtn.value = true;
         }
 
         cardOne.removeEventListener('click', flipCard);

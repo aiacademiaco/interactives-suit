@@ -1,0 +1,213 @@
+.memory-activity {
+    &.bg-blue-light {
+        background: #63A8FF;
+    }
+
+    .memory-activity-wrapper {
+        padding: 25px;
+        border-radius: 10px;
+        background: #F8F8F8;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+        .cards,
+        .card,
+        .view {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cards {
+            height: 480px;
+            width: 480px;
+            padding: 0;
+            margin: 0;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .card {
+                cursor: pointer;
+                list-style: none;
+                user-select: none;
+                position: relative;
+                perspective: 1000px;
+                transform-style: preserve-3d;
+                height: 90px;
+                width: 90px;
+
+                &.shake {
+                    animation: shake 0.35s ease-in-out;
+                }
+
+                .view {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    border-radius: 7px;
+                    background: #fff;
+                    pointer-events: none;
+                    backface-visibility: hidden;
+                    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+                    transition: transform 0.25s linear;
+                }
+
+                .front-view {
+                    img {
+                        width: 19px;
+                    }
+                }
+
+                .back-view {
+                    transform: rotateY(-180deg);
+
+                    img {
+                        max-width: 45px;
+                    }
+                }
+
+                &.flip {
+                    .back-view {
+                        transform: rotateY(0);
+                    }
+                }
+
+                &.flip {
+                    .front-view {
+                        transform: rotateY(180deg);
+                    }
+                }
+            }
+        }
+    }
+
+    .memory-activity-actions {
+        margin: 2rem 0;
+
+        &__btn {
+            padding: 0.1em 0.25em;
+            width: 13em;
+            height: 4.2em;
+            background-color: #0f0f0f;
+            border: 0.08em solid #fff;
+            border-radius: 0.3em;
+            font-size: 11px;
+            cursor: pointer;
+
+            span {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                bottom: 0.4em;
+                width: 8.25em;
+                height: 2.5em;
+                background-color: #f8f8f8;
+                border-radius: 0.2em;
+                font-size: 1.5em;
+                color: #161617;
+                border: 0.08em solid #757272;
+                box-shadow: 0 0.4em 0.1em 0.019em #fff;
+
+                &:hover {
+                    transition: all 0.5s;
+                    transform: translate(0, 0.4em);
+                    box-shadow: 0 0 0 0 #fff;
+                }
+
+                &:not(hover) {
+                    transition: all 1s;
+                }
+            }
+        }
+    }
+
+    .feedback {
+        margin: 1rem 0;
+
+        &__text {
+            text-align: center;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 500;
+            margin: 0;
+        }
+    }
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-13px);
+    }
+
+    40% {
+        transform: translateX(13px);
+    }
+
+    60% {
+        transform: translateX(-8px);
+    }
+
+    80% {
+        transform: translateX(8px);
+    }
+}
+
+//   Responsive
+@media screen and (max-width: 700px) {
+    .memory-activity {
+        .memory-activity-wrapper {
+            .cards {
+                height: 350px;
+                width: 350px;
+
+                .card {
+                    height: 65px;
+                    width: 65px;
+
+                    .front-view {
+                        img {
+                            width: 17px;
+                        }
+                    }
+
+                    .back-view {
+                        img {
+                            max-width: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .memory-activity {
+        .memory-activity-wrapper {
+            .cards {
+                height: 300px;
+                width: 300px;
+
+                .card {
+                    .front-view {
+                        img {
+                            width: 15px;
+                        }
+                    }
+
+                    .back-view {
+                        img {
+                            max-width: 35px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
